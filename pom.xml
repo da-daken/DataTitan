@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.example</groupId>
+  <artifactId>DataTian</artifactId>
+  <packaging>pom</packaging>
+  <modules>
+    <module>bootStrap</module>
+    <module>Service</module>
+  </modules>
+  <version>1.0-SNAPSHOT</version>
+  <name>DataTian</name>
+
+  <properties>
+    <dataTian.version>1.0-SNAPSHOT</dataTian.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- SpringBoot 启动类依赖 start -->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter</artifactId>
+        <version>2.7.6</version>
+      </dependency>
+      <!-- SpringBoot 启动类依赖 end -->
+
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>3.8.1</version>
+        <scope>test</scope>
+      </dependency>
+
+      <!-- module 依赖包 start -->
+      <dependency>
+        <groupId>org.example</groupId>
+        <artifactId>bootStrap</artifactId>
+        <version>${dataTian.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.example</groupId>
+        <artifactId>Service</artifactId>
+        <version>${dataTian.version}</version>
+      </dependency>
+      <!-- module 依赖包 end -->
+
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <finalName>DataTian</finalName>
+  </build> 
+</project>
